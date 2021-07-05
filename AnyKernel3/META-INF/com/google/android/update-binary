@@ -469,22 +469,10 @@ if [ -f version ]; then
   ui_print " ";
 fi;
 
-ui_print "=======================================";
-ui_print "             ,:\                       ";
-ui_print "            //  \_()______             ";
-ui_print "           ||   |    |   ||            ";
-ui_print "           ||   |    |   ||            ";
-ui_print "           ||   |____|___||            ";
-ui_print "            \   / ||                   ";
-ui_print "             \_/  ||                   ";
-ui_print "                  ||                   ";
-ui_print "                  ||                   ";
-ui_print "                  XX                   ";
-ui_print "                  XX                   ";
-ui_print "                  XX                   ";
-ui_print "                  OO                   ";
-ui_print "                  OO                   ";
-ui_print "                  XX                   ";
+ui_print "======================================";
+ui_print "             Chae                     ";
+ui_print "             young.                   ";
+ui_print "             Kernel                   ";
 ui_print " =====================================";
 ui_print " ";
 ui_print "- Introducing $(file_getprop anykernel.sh kernel.string)";
