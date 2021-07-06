@@ -59,7 +59,7 @@ function compile() {
 # Zipping
 function zipping() {
     cd AnyKernel3 || exit 1
-    zip -r9 CY-4.19-${TIMESTAMP}.zip *
+    zip -r9 CY-4.19-JUICE-${TIMESTAMP}.zip *
     cd ..
 }
 sendinfo
