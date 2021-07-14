@@ -2791,7 +2791,7 @@ static int tavil_codec_ear_dac_event(struct snd_soc_dapm_widget *w,
 		wcd_clsh_fsm(component, &tavil->clsh_d,
 			     WCD_CLSH_EVENT_PRE_DAC,
 			     WCD_CLSH_STATE_EAR,
-			     CLS_H_NORMAL);
+			     CLS_AB);
 		if (tavil->anc_func)
 			snd_soc_component_update_bits(component,
 					WCD934X_CDC_RX0_RX_PATH_CFG0,
@@ -2801,7 +2801,7 @@ static int tavil_codec_ear_dac_event(struct snd_soc_dapm_widget *w,
 		wcd_clsh_fsm(component, &tavil->clsh_d,
 			     WCD_CLSH_EVENT_POST_PA,
 			     WCD_CLSH_STATE_EAR,
-			     CLS_H_NORMAL);
+			     CLS_AB);
 		break;
 	default:
 		break;
@@ -2858,7 +2858,7 @@ static int tavil_codec_hphr_dac_event(struct snd_soc_dapm_widget *w,
 		if (dsd_conf &&
 		    (snd_soc_component_read32(component,
 				WCD934X_CDC_DSD1_PATH_CTL) & 0x01))
-			hph_mode = CLS_H_HIFI;
+			hph_mode = CLS_AB;
 
 		wcd_clsh_fsm(component, &tavil->clsh_d,
 			     WCD_CLSH_EVENT_PRE_DAC,
@@ -2943,7 +2943,7 @@ static int tavil_codec_hphl_dac_event(struct snd_soc_dapm_widget *w,
 		if (dsd_conf &&
 		    (snd_soc_component_read32(component,
 				WCD934X_CDC_DSD0_PATH_CTL) & 0x01))
-			hph_mode = CLS_H_HIFI;
+			hph_mode = CLS_AB;
 
 		wcd_clsh_fsm(component, &tavil->clsh_d,
 			     WCD_CLSH_EVENT_PRE_DAC,
@@ -10482,7 +10482,7 @@ static int tavil_soc_codec_probe(struct snd_soc_component *component)
 	/* Class-H Init */
 	wcd_clsh_init(&tavil->clsh_d);
 	/* Default HPH Mode to Class-H Low HiFi */
-	tavil->hph_mode = CLS_H_LOHIFI;
+	tavil->hph_mode = CLS_AB;
 
 	tavil->fw_data = devm_kzalloc(component->dev, sizeof(*(tavil->fw_data)),
 				      GFP_KERNEL);
