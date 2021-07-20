@@ -142,7 +142,6 @@ kernel/configs/android-*.cfg
 #techpack/
 
 # Build script & out
-build.sh
 out/
 /gcc
 /gcc32
