@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 echo "Cloning dependencies"
-git clone --depth=1 https://github.com/sohamxda7/llvm-stable clang
+#git clone --depth=1 https://github.com/sohamxda7/llvm-stable clang
+git clone --depth=1 https://github.com/GengKapak/GengKapak-clang clang
 git clone https://github.com/sohamxda7/llvm-stable -b gcc64 --depth=1 gcc
 git clone https://github.com/sohamxda7/llvm-stable -b gcc32  --depth=1 gcc32
 echo "Done"
@@ -9,8 +10,8 @@ START=$(date +"%s")
 KERNEL_DIR=$(pwd)
 PATH="${KERNEL_DIR}/clang/bin:${KERNEL_DIR}/gcc/bin:${KERNEL_DIR}/gcc32/bin:${PATH}"
 VERSION="$(cat arch/arm64/configs/chaeyoung-perf_defconfig | grep "CONFIG_LOCALVERSION\=" | sed -r 's/.*"(.+)".*/\1/' | sed 's/^.//')"
-export KBUILD_BUILD_HOST=123
-export KBUILD_BUILD_USER="dlwlrma"
+export KBUILD_BUILD_HOST="SerberSangar"
+export KBUILD_BUILD_USER="isnrdra"
 
 # Compile plox
 function compile() {
